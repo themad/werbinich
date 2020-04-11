@@ -1,0 +1,13 @@
+{
+	"state": "game",
+	"players":  [
+		{"name": "Ellen", "Who?": "Osterhase", "done": false, "count": 0},
+		{"name": "Computer", "Who?": "Bill Gates", "done": false, "count": 0},
+		{"name": "Andreas", "Who?": "Supergoofy", "done": false, "count": 0},
+		{"name":"Stefan", "Who?": "Rattentod", "done": false, "count": 0}
+	],
+	"turn": "Ellen",
+	"meta": {
+		"gameid": "0815"
+	}
+}
