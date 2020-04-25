@@ -28,6 +28,11 @@ type Player
              }
     | NewPlayer { name : String }
 
+getName : Player -> String
+getName p = case p of
+                Player { name } -> name
+                NewPlayer { name } -> name
+
 type alias Gamestate =
     { turn : String
     , players : List Player
@@ -74,18 +79,12 @@ nextPlayer playername list =
             let
                 nextPlayer_ restlist firstItem =
                     case restlist of
-                        p::ys -> case p of
-                                    NewPlayer {name} -> if name == playername then
-                                                         case ys of
-                                                             y::zs -> Just y
-                                                             [] -> Just firstItem
-                                                     else nextPlayer_ ys firstItem
-                                    Player {name} -> if name == playername then
-                                                         case ys of
-                                                             y::zs -> Just y
-                                                             [] -> Just firstItem
-                                                     else nextPlayer_ ys firstItem
                         [] -> Nothing
+                        p::ys -> if getName p == playername then
+                                                case ys of
+                                                    y::zs -> Just y
+                                                    [] -> Just firstItem
+                                                else nextPlayer_ ys firstItem
             in nextPlayer_ (x::xs) x
    
 -- UPDATE
