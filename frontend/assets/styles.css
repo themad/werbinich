@@ -1,0 +1,10 @@
+#Leute {
+	border: 1px solid black;
+	margin-left:100px;
+	padding: 0;
+}
+#Leute>li {
+	position: absolute;
+	border: 1px solid black;
+	display: inline-block;
+}
